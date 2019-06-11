@@ -100,7 +100,7 @@ y despues en el envoltorio app:passwordToggleEnabled="true"-->
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:onClick="enviar"
+            android:onClick="registrar"
             android:text="REGISTRAR" />
         <Button
             android:id="@+id/botonmodificar"
