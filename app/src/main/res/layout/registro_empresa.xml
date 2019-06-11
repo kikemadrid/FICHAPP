@@ -29,7 +29,7 @@ y despues en el envoltorio app:passwordToggleEnabled="true"-->
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="CIF"
-            android:tag="cif"
+            android:tag="tagcif"
             android:inputType="textNoSuggestions" />
 
     </android.support.design.widget.TextInputLayout>
@@ -42,12 +42,14 @@ y despues en el envoltorio app:passwordToggleEnabled="true"-->
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        app:passwordToggleEnabled="true">
+        app:passwordToggleEnabled="true"
+        app:counterEnabled="true"
+        app:counterMaxLength="30">
         <EditText
             android:id="@+id/cajanombreempresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:tag="nombreempresa"
+            android:tag="tagnombreempresa"
             android:hint="Nombre empresa"
             android:inputType="text"/>
     </android.support.design.widget.TextInputLayout>
@@ -65,8 +67,8 @@ y despues en el envoltorio app:passwordToggleEnabled="true"-->
             android:id="@+id/cajaresponsable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Responsable"
-            android:tag="responsable"
+            android:hint="Nombre responsable"
+            android:tag="tagresponsable"
             android:inputType="text"/>
     </android.support.design.widget.TextInputLayout>
 
@@ -83,26 +85,43 @@ y despues en el envoltorio app:passwordToggleEnabled="true"-->
             android:id="@+id/cajaemail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:tag="email"
+            android:tag="tagemail"
             android:hint="Email"
             android:inputType="textEmailAddress"/>
     </android.support.design.widget.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/tilbotonenviar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp">
+
 
         <Button
             android:id="@+id/botonenviar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:onClick="enviar"
-            android:text="ENVIAR" />
-    </android.support.design.widget.TextInputLayout>
+            android:text="REGISTRAR" />
+        <Button
+            android:id="@+id/botonmodificar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:onClick="modificar"
+            android:text="MODIFICAR" />
+        <Button
+            android:id="@+id/botoneliminar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:onClick="eliminar"
+            android:text="ELIMINAR" />
+
 
 </LinearLayout>
