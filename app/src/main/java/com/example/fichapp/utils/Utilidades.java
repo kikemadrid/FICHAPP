@@ -8,10 +8,6 @@ import java.util.regex.Pattern;
 public class Utilidades {
 
 
-
-
-
-
     //########################## VALIDACIONES FORMULARIOS REGISTRO #######################################
 
     private static final String letras_validas = "ABCDEFGHJPQRSUV";
@@ -28,10 +24,22 @@ public class Utilidades {
     private static final String tipo_de_nombre = "ABEH";
 
 
+    /**
+     * VALIDA QUE EL EMAIL PASADO COMO PARÁMETRO SEA VÁLIDO
+     * @param email
+     * @return TRUE EN CASO DE QUE ESTE CORRECTO EL EMAIL
+     */
+
     public static boolean emailValido (String email)
     {
         return (Patterns.EMAIL_ADDRESS.matcher(email).matches());
     }
+
+    /**
+     * VALIDA QUE EL CIF ESTE INGRESADO CORRECTAMENTE
+     * @param cif
+     * @return TRUE EN CASO DE QUE ESTE CORRECTO EL CIF
+     */
 
     public static boolean cifValido (String cif){
         boolean resultado = false;
@@ -85,24 +93,33 @@ public class Utilidades {
         return resultado;
     }
 
-    /*
-    * Valida que una cadena tenga un tamaño. Se usa para validar nombre de usuario y empresa
+    /**
+     * Valida que una cadena tenga un tamaño. Se usa para validar nombre de usuario y empresa
+     * @param nombre
+     * @return TRUE EN CASO CORRECTO
      */
     
     public static boolean validarNombre (String nombre){
-        boolean resultado = false;
-        if (nombre != null){
-            resultado = nombre.length() > 0;
-        }
-        return resultado;
+        Pattern patron = Pattern.compile("^[a-zA-Z ]+$");
+        return patron.matcher(nombre).matches() || nombre.length() < 4;
     }
 
-    /*
-    *  Comprueba que dos password sean identicas, devuelve true en tal caso.
+    /**
+     * VALIDA QUE LAS CONTRASEÑAS COINCIDAN
+     * @param pass1
+     * @param pass2
+     * @return TRUE EN CASO CORRECTO
      */
-    public static boolean comprobarIgual(String pass1, String pass2){
+    public static boolean comprobarIgual(
+            String pass1, String pass2){
         return pass1.equals(pass2);
     }
+
+    /**
+     * VALIDA QUE LA CONTRASEÑA SEA VALIDA CON UN PATRÓN DECLARADO
+     * @param p1
+     * @return TRUE EN CASO CORRECTO
+     */
 
     public static boolean contrasenaValida (String p1)
     {
